@@ -1,22 +1,27 @@
 import React from 'react'
 import Card from '@material-ui/core/Card';
 import {Grid} from "@material-ui/core";
+//Localization
+import { useTranslation } from 'react-i18next';
 
 export default function SecondStep() {
+  //Localization
+  const { t } = useTranslation();
+
     return (
         <div>
           <Grid container justify="center" alignItems="center" direction="column">
-          <h1>Pago del producto</h1>
-          <p>Una vez efectuado el pago del producto, recibirás un email con los detalles de la compro.</p>
+          <h1>{t('SndStepH1.1')}</h1>
+          <p>{t('SndStepP1.1')}</p>
           <Card className="mycard" variant="outlined" p="5">
           <Grid container  alignItems="center" direction="column">
           <img src='/img/01.PNG' alt=''/>
-          <h1>Tarjeta de crédito</h1>
-          <p>Se redirigerá a una plataforma de pago. Se trata de un proceso seguro. Puede que la validación del pago tarde 24 horas en completarse.</p>
+          <h1>{t('SndStepH2.1')}</h1>
+          <p>{t('SndStepP2.1')}</p>
           <img src='/img/02.PNG' alt=''/>
           </Grid>
           </Card>
           </Grid>
-          </div>
+        </div>
     )
 }

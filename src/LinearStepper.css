@@ -12,32 +12,25 @@ p{
     text-align:center;
 }
 
-.mycard{
-    width: 80%;
-    display: grid;
-    padding: 2em;
-    margin-bottom:2em;
-}
-
-.mybutton{
+.pagebtn{
     position:absolute;
     bottom: 0;
 }
 
-.mybutton:hover {
+.pagebtn:hover {
     background-color:#2196f3 !important;
     color:#fff !important;
 }
 
-.mybutton1:hover span {
+.btnback:hover span {
     padding-right: 25px;
 }
 
-.mybutton2:hover span {
+.btnnext:hover span {
     padding-left: 25px;
 }
   
-.mybutton:hover span:after {
+.pagebtn:hover span:after {
     opacity: 1;
     right: 0;
 }

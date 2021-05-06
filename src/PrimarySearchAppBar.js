@@ -9,7 +9,10 @@ import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import AddIcCallIcon from '@material-ui/icons/AddIcCall';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
 
+//Style of Navbar
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -38,6 +41,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function PrimarySearchAppBar() {
+
+  //Language localization setting
+  const { t } = useTranslation();
+
+  function handleClick(lang) {
+    i18next.changeLanguage(lang)
+  }
+
+  //basic Navbar setting
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -73,8 +85,8 @@ export default function PrimarySearchAppBar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Es</MenuItem>
-      <MenuItem onClick={handleMenuClose}>En</MenuItem>
+      <MenuItem onClick={()=>handleClick('Es')}>Es</MenuItem>
+      <MenuItem onClick={()=>handleClick('en')}>En</MenuItem>
     </Menu>
   );
 
@@ -92,13 +104,13 @@ export default function PrimarySearchAppBar() {
       <MenuItem>
         <IconButton  color="inherit">
         </IconButton>
-        <p>Iniciar</p>
+        <p>{t('NavSignin.1')}</p>
       </MenuItem>
       <MenuItem>
         <IconButton  color="inherit">
         <AddIcCallIcon />
         </IconButton>
-        <p>Ayuda</p>
+        <p>{t('NavHelp.1')}</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -106,7 +118,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Idiomas</p>
+        <p>{t('NavLan.1')}</p>
       </MenuItem>
     </Menu>
   );
@@ -122,10 +134,10 @@ export default function PrimarySearchAppBar() {
           <div className={classes.sectionDesktop}>
             <IconButton color="inherit">
               <AddIcCallIcon />
-              <p>Ayuda</p>               
+              <p>{t('NavHelp.1')}</p>             
             </IconButton>
             <IconButton color="inherit">
-              <p>Iniciar</p> 
+            <p>{t('NavSignin.1')}</p>
             </IconButton>
             <IconButton
               edge="end"
@@ -135,7 +147,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <p>{t('NavLan.1')}</p>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

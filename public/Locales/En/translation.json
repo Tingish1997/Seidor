@@ -1,0 +1,50 @@
+{
+    "FirstStepH1": {
+        "1": "Mis Datos"
+    },
+    "FirstStepP": {
+        "1": "Revisa los datos y completa aquellos pendientes antes de continuar con el proceso."
+    },
+    "Firstname": {
+        "1": "First Name"
+    },
+    "Lastname": {
+        "1": "Last Name"
+    },
+    "SndStepH1": {
+        "1": "Product payment"
+    },
+    "SndStepP1": {
+        "1": "Once the payment of the product has been made, you will receive an email with the details of the purchase."
+    },
+    "SndStepH2": {
+        "1": "Credit Card"
+    },
+    "SndStepP2": {
+        "1": "You will be redirected to a payment platform. It is a safe process. It may take 24 hours for payment validation to complete."
+    },
+    "NavHelp": {
+        "1": "Help"
+    },
+    "NavSignin": {
+        "1": "Sign In"
+    },
+    "NavLan": {
+        "1": "Language"
+    },
+    "StepData": {
+        "1": "My data"
+    },
+    "StepPay": {
+        "1": "Payment"
+    },
+    "BtnNext": {
+        "1": "Next"
+    },
+    "BtnPre": {
+        "1": "Back"
+    },
+    "BtnPay": {
+        "1": "Pay"
+    }
+}

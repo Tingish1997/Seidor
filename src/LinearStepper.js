@@ -16,7 +16,11 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import FirstStep from './Components/FirstStep';
 import SecondStep from './Components/SecondStep';
 import ThirdStep from './Components/ThirdStep';
+import { useTranslation } from 'react-i18next';
 
+
+
+//Stepper text
 function getSteps() {
   return [
     "Mis Datos",
@@ -24,7 +28,7 @@ function getSteps() {
   ];
 }
 
-
+//Multi-forms content switch
 function getStepContent(step) {
   switch (step) {
     case 0:
@@ -51,7 +55,10 @@ function getStepContent(step) {
 }
 
 
+
+
 const LinearStepper = () => {
+  
   const [activeStep, setActiveStep] = useState(0);
   const steps = getSteps();
 
@@ -66,7 +73,9 @@ const LinearStepper = () => {
   const handleBack = () => {
     setActiveStep(activeStep - 1);
   };
-
+  //Localization
+  const { t } = useTranslation();
+ //Multi-form body
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -102,7 +111,7 @@ const LinearStepper = () => {
         <>
           <form>{getStepContent(activeStep)}</form>
           {isStepOptional(activeStep) && (<Button
-            className="mybutton mybutton1" 
+            className="pagebtn btnback" 
             disabled={activeStep === 0}
             onClick={handleBack}
             color="primary"
@@ -112,11 +121,12 @@ const LinearStepper = () => {
           </Button>
           )}          
           <Button 
-            className="mybutton mybutton2"            
+            className="pagebtn btnnext"            
             color="primary"
             variant="outlined"
             onClick={handleNext}
             style={{ float:"right"}}
+            type="submit"
           >
             {activeStep === steps.length - 1 ? "Pagar" : "Continuar"}
             <ArrowForwardIcon/>
